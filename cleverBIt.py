@@ -49,6 +49,31 @@ class Problem:
         route.append(self.end)
         return length, route
 
+    def smooth(self):
+        smoothedIsland = [self.start]
+        returning = False
+        while returning != True:
+            nextCandidate = self.end
+            for i in self.island:
+                ang = smoothedIsland[-1].angleBetween(self.end, i)
+                if ((ang > smoothedIsland[-1].angleBetween(self.end, nextCandidate)) & (ang > 0 )):
+                    nextCandidate = i
+            if i == self.end:
+                returning = True
+            smoothedIsland.append(i)
+
+        while returning == True:
+            nextCandidate = self.start
+            for i in self.island:
+                ang = smoothedIsland[-1].angleBetween(self.start, i)
+                if ((ang > smoothedIsland[-1].angleBetween(self.start, nextCandidate)) & (ang > 0)):
+                    nextCandidate = i
+            if i == self.start:
+                returning = False
+            else:
+                smoothedIsland.append(i)
+
+        self.island = smoothedIsland
 
     def solve(self):
         islandStart = self.findClosest(self.start)
@@ -81,7 +106,7 @@ if __name__ == '__main__':
     #print(islandPoints[0])
     #create a cleveBit class
     solver = Problem(startPnt,endPnt,islandPoints)
-
+    solver.smooth()
     solution = solver.solve()
     print(solution)
     for pnt in solution:
