@@ -27,6 +27,7 @@ class Problem:
     def calculateRouteLength(self, start, end, clockwise):
         currentNode = start
         length = 0
+        route = [self.island[start]]
         while (currentNode != end):
             if clockwise:
                 if (currentNode == len(self.island)-1):
@@ -40,28 +41,26 @@ class Problem:
                     nextNode = currentNode-1
 
             length += self.island[currentNode].distanceTo(self.island[nextNode])
+            route.append(self.island[nextNode])
 
             currentNode = nextNode
 
-        return length
+        route.insert(0, self.start)
+        route.append(self.end)
+        return length, route
+
 
     def solve(self):
         islandStart = self.findClosest(self.start)
         islandEnd = self.findClosest(self.end)
-        cwLength = self.calculateRouteLength(islandStart, islandEnd, True)
-        acwLength = self.calculateRouteLength(islandStart, islandEnd, False)
+        cwLength, cwRoute = self.calculateRouteLength(islandStart, islandEnd, True)
+        acwLength, acwRoute = self.calculateRouteLength(islandStart, islandEnd, False)
         if (cwLength < acwLength):
-            return cwLength
+            return cwRoute
         else:
-            return acwLength
+            return acwRoute
 
 
-
-
-"""
-
-Entry point system
-"""
 if __name__ == '__main__':
     #Grab the data
     data = reading.readData('docsAndXML/testcases/sampleTestcase.xml')
@@ -85,3 +84,4 @@ if __name__ == '__main__':
 
     solution = solver.solve()
     print(solution)
+
