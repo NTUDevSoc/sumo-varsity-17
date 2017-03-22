@@ -22,6 +22,16 @@ class Problem:
                 closest = i
         return closest
 
+    def calculateRoute(self, start, end, clockwise):
+        currentNode = start
+        length = 0
+        while (currentNode != end):
+            if clockwise:
+                if (currentNode == len(self.island-1)):
+                    nextNode = 0
+                else:
+                    nextNode = currentNode+1 
+
     def solve(self):
         islandStart = self.findClosest(self.start)
         islandEnd = self.findClosest(self.end)
