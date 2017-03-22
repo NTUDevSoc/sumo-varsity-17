@@ -78,5 +78,9 @@ if __name__ == '__main__':
     #print(endPos)
     print(islandPoints)
 
+
     #print(islandPoints[0])
     #create a cleveBit class
+    solver = Problem(startPnt,endPnt,islandPoints)
+
+    solution = solver.solve()
