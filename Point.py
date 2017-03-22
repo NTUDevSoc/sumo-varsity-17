@@ -1,6 +1,7 @@
 import math
 
-class Point
+class Point:
+    #Expects number
     def __init__(self, x, y):
         self.x = x
         self.y = y
