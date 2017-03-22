@@ -13,7 +13,7 @@ class Problem:
     def createPoints(self, island):
         pList = []
         for i in island:
-            pList.append(Point.Point(i[0], i[1]))
+            pList.append(Point.Point(float(i[0]), float(i[1])))
 
         return pList
 
@@ -72,11 +72,11 @@ if __name__ == '__main__':
     islandPoints = data['island']
 
     #Create some points
-    startPnt = Point.Point(startPos[0],startPos[1])
+    startPnt = Point.Point(float(startPos[0]),float(startPos[1]))
     #print(startPnt)
-    endPnt = Point.Point(endPos[0],endPos[1])
+    endPnt = Point.Point(float(endPos[0]),float(endPos[1]))
     #print(endPos)
-    print(islandPoints)
+    #print(islandPoints)
 
 
     #print(islandPoints[0])
@@ -84,3 +84,4 @@ if __name__ == '__main__':
     solver = Problem(startPnt,endPnt,islandPoints)
 
     solution = solver.solve()
+    print(solution)
