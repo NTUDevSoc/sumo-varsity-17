@@ -1,4 +1,4 @@
 class RenderObject:
-    def __init__:
+    def __init__(self, color):
         self.points = []
-        self.color = Color();
+        self.color = Color(color)
