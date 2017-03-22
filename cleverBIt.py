@@ -84,4 +84,5 @@ if __name__ == '__main__':
 
     solution = solver.solve()
     print(solution)
-
+    for pnt in solution:
+        print("First go: ", "x:", pnt.x,"y:",pnt.y)
