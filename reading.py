@@ -1,14 +1,24 @@
 
 import io
-import xml.etree.ElementTree
+import untangle
+import xmltodict
+
+obj = untangle.parse('docsAndXML/testcases/sampleTestcase.xml')
+
 
 
 """
-read in file
-
-@return startPos[x,y], endPos[x,y], islandPoints[[x,y],...nn]
 """
-xmlFile = open("docsAndXML/testcases/sampleTestcase.xml")
-e = xml.etree.ElementTree.parse('docsAndXML/testcases/sampleTestcase.xml').getroot()
-print(e)
-e.get("Point")
+def readData(filename):
+    dic = {}
+    with open(filename) as fd:
+        dic = xmltodict.parse(fd.read())
+        #print(dic)
+
+    start = dic['TestCase']['StartPoint']
+    print(start)
+    end =  dic['TestCase']['EndPoint']
+
+
+
+readData('docsAndXML/testcases/sampleTestcase.xml')
