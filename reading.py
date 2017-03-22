@@ -2,12 +2,14 @@
 import io
 import untangle
 import xmltodict
+import xml.etree.ElementTree
 
 obj = untangle.parse('docsAndXML/testcases/sampleTestcase.xml')
 
 
 
 """
+
 
 @param filename with xml pleassee
 
@@ -30,7 +32,9 @@ def readData(filename):
 
     islandPoints = []
     for i in points:
-        islandPoints.append(i.split(" ")
+        islandPoints.append(i.split(" "))
+                            
+    return {'start': startPos,'end':endPos,'island':islandPoints}
 
 
     #return {'str':startPos, 'end': endPos, 'island':islandPoints}
