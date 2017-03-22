@@ -1,3 +1,4 @@
+import reading
 import Point
 
 class Problem:
@@ -55,3 +56,13 @@ class Problem:
             return acwLength
 
 
+
+
+"""
+
+Entry point system
+"""
+
+
+#Grab the data
+startPos,endPos,islandPoints = reading.readData('docsAndXML/testcases/sampleTestcase.xml')
