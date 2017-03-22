@@ -31,19 +31,19 @@ def writeData(startPointData, endPointData, islandPointsData,
           routePointsData, filename):
     testCase = etree.Element("TestCase")
     startPoint = etree.SubElement(testCase, "StartPoint")
-    startPoint.text = str(startPointData[0]) + " " + str(startPointData[1])
+    startPoint.text = str(startPointData.x) + " " + str(startPointData.y)
     endPoint = etree.SubElement(testCase, "EndPoint")
-    endPoint.text = str(endPointData[0]) + " " + str(endPointData[1])
+    endPoint.text = str(endPointData.x) + " " + str(endPointData.y)
     islandPoints = etree.SubElement(testCase, "IslandPoints")
     #insert for loop which adds all the points of the island.
     for dataPoint in islandPointsData:
       xmlPoint = etree.SubElement(islandPoints, "Point")
-      xmlPoint.text = str(dataPoint[0]) + " " + str(dataPoint[1])
+      xmlPoint.text = str(dataPoint.x) + " " + str(dataPoint.y)
     #insert for loop which adds all the points of the calculated solution.
     routePoints = etree.SubElement(testCase, "RoutePoints")
     for dataPoint in routePointsData:
       xmlPoint = etree.SubElement(routePoints, "Point")
-      xmlPoint.text = str(dataPoint[0]) + " " + str(dataPoint[1])
+      xmlPoint.text = str(dataPoint.x) + " " + str(dataPoint.y)
     finalTree = etree.tostring(testCase, xml_declaration=True, pretty_print= True)
     print(finalTree)
     file = open(filename, 'wb')
