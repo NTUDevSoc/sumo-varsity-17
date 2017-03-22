@@ -1,2 +1,3 @@
 untangle
 xmltodict
+lxml
