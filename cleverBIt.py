@@ -1,6 +1,7 @@
-import Point
+import reading
 
-class Problem
+
+class Problem:
     def __init__(self, start, end, island):
         self.start = start
         self.end = end
@@ -25,3 +26,13 @@ class Problem
         islandStart = self.findClosest(self.start)
         islandEnd = self.findClosest(self.end)
 
+
+
+"""
+
+Entry point system
+"""
+
+
+#Grab the data
+startPos,endPos,islandPoints = reading.readData('docsAndXML/testcases/sampleTestcase.xml')

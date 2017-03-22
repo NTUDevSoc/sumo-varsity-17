@@ -9,8 +9,6 @@ obj = untangle.parse('docsAndXML/testcases/sampleTestcase.xml')
 
 
 """
-
-
 @param filename with xml pleassee
 
 @return start[x,y], end[x,y], islandPoints=[[x,y],...,n]
@@ -33,7 +31,7 @@ def readData(filename):
     islandPoints = []
     for i in points:
         islandPoints.append(i.split(" "))
-                            
+
     return {'start': startPos,'end':endPos,'island':islandPoints}
 
 
@@ -42,5 +40,5 @@ def readData(filename):
 
 
 
-data = readData('docsAndXML/testcases/sampleTestcase.xml')
-print(data)
+#data = readData('docsAndXML/testcases/sampleTestcase.xml')
+#print(data)
