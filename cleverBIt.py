@@ -62,7 +62,6 @@ class Problem:
 
 Entry point system
 """
-
-
-#Grab the data
-startPos,endPos,islandPoints = reading.readData('docsAndXML/testcases/sampleTestcase.xml')
+if __name__ == '__main__':
+    #Grab the data
+    startPos,endPos,islandPoints = reading.readData('docsAndXML/testcases/sampleTestcase.xml')
