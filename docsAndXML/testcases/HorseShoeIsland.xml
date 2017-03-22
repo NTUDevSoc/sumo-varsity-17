@@ -1,0 +1,20 @@
+<TestCase>
+  <StartPoint>15.45 44.76</StartPoint>
+  <EndPoint>78.15 43.48</EndPoint>
+  <IslandPoints>
+    <Point>40.14 64.31</Point>
+    <Point>35.37 64.16</Point>
+    <Point>30.00 50.00</Point>
+    <Point>32.42 24.36</Point>
+    <Point>47.05 14.16</Point>
+    <Point>63.82 24.50</Point>
+    <Point>66.57 48.16</Point>
+    <Point>61.69 65.58</Point>
+    <Point>55.49 65.01</Point>
+    <Point>57.72 44.48</Point>
+    <Point>56.30 31.59</Point>
+    <Point>47.66 26.06</Point>
+    <Point>39.94 31.30</Point>
+    <Point>37.80 46.46</Point>
+  </IslandPoints>
+</TestCase>
