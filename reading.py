@@ -32,7 +32,9 @@ def readData(filename):
 
     islandPoints = []
     for i in points:
-        islandPoints.append(i.split(" ")
+        islandPoints.append(i.split(" "))
+                            
+    return {'start': startPos,'end':endPos,'island':islandPoints}
 
 
     #return {'str':startPos, 'end': endPos, 'island':islandPoints}
