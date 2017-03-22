@@ -61,14 +61,26 @@ class Problem:
             return acwRoute
 
 
+if __name__ == '__main__':
+    #Grab the data
+    data = reading.readData('docsAndXML/testcases/sampleTestcase.xml')
+    #print(data)
+    #Create a point
+    startPos = data['start']
+    endPos = data['end']
+    islandPoints = data['island']
+
+    #Create some points
+    startPnt = Point.Point(startPos[0],startPos[1])
+    #print(startPnt)
+    endPnt = Point.Point(endPos[0],endPos[1])
+    #print(endPos)
+    print(islandPoints)
 
 
-"""
+    #print(islandPoints[0])
+    #create a cleveBit class
+    solver = Problem(startPnt,endPnt,islandPoints)
 
-Entry point system
-"""
+    solution = solver.solve()
 
-
-#Grab the data
-startPos,endPos,islandPoints = reading.readData('docsAndXML/testcases/sampleTestcase.xml')
-Problem(Point.Point(startPos[0], startPos[1]), Point.Point(endPos[0], endPos[1]), islandPoints)
