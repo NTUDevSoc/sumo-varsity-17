@@ -64,4 +64,19 @@ Entry point system
 """
 if __name__ == '__main__':
     #Grab the data
-    startPos,endPos,islandPoints = reading.readData('docsAndXML/testcases/sampleTestcase.xml')
+    data = reading.readData('docsAndXML/testcases/sampleTestcase.xml')
+    #print(data)
+    #Create a point
+    startPos = data['start']
+    endPos = data['end']
+    islandPoints = data['island']
+
+    #Create some points
+    startPnt = Point.Point(startPos[0],startPos[1])
+    #print(startPnt)
+    endPnt = Point.Point(endPos[0],endPos[1])
+    #print(endPos)
+    print(islandPoints)
+
+    #print(islandPoints[0])
+    #create a cleveBit class
