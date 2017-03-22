@@ -9,8 +9,6 @@ class Renderer:
         pygame.display.set_caption("Pirate Router")
         self.showing = True
         self.backColor = pygame.Color(0, 0, 255)
-        self.start = []
-        self.end = []
         self.route = []
         self.island = []
 
@@ -32,8 +30,9 @@ class Renderer:
 
             pygame.draw.polygon(self.screen, [0, 255, 0], self.island)
             pygame.draw.lines(self.screen, [255, 0, 0], False, self.route, 5)
-            pygame.draw.circle(self.screen, [0] * 3, self.route[0], 3)
-            pygame.draw.circle(self.screen, [0] * 3, self.route[-1], 3)
+            
+            pygame.draw.circle(self.screen, [0] * 3, [int(self.route[0][0]), int(self.route[0][1])], 3)
+            pygame.draw.circle(self.screen, [0] * 3, [int(self.route[-1][0]), int(self.route[-1][1])], 3)
 
             pygame.display.flip()
 

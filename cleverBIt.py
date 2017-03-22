@@ -1,5 +1,6 @@
 import reading
 import Point
+import Renderer
 
 class Problem:
     #Start and End are point objects repesenting the ships
@@ -83,6 +84,12 @@ if __name__ == '__main__':
     solver = Problem(startPnt,endPnt,islandPoints)
 
     solution = solver.solve()
+
+    renderer = Renderer.Renderer()
+    renderer.setIsland(solver.island)
+    renderer.setRoute(solution)
+    renderer.render()
+    
     print(solution)
     for pnt in solution:
         print("First go: ", "x:", pnt.x,"y:",pnt.y)
